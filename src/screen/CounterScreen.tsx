@@ -1,12 +1,19 @@
 import React, {useState} from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
 import Button from '../component/Button';
+import {StackScreenProps} from '@react-navigation/stack';
 
-function CounterScreen(): JSX.Element {
+interface Props extends StackScreenProps<any, any> {}
+
+function CounterScreen({navigation}: Props): JSX.Element {
   const [number, setNumber] = useState(0);
+  console.log(navigation);
 
   return (
     <View style={style.container}>
+      <View>
+        <Button textbutton="Otra Pantalla" onPress={() => navigation.navigate('Blog')} />
+      </View>
       <View style={style.counter}>
         {number > 0 ? (
           <Image
@@ -32,7 +39,6 @@ function CounterScreen(): JSX.Element {
     </View>
   );
 }
-
 
 export default CounterScreen;
 

@@ -1,8 +1,14 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import CounterScreen from './src/screen/CounterScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import Navigation from './src/navigation/navigation';
 
 function App(): JSX.Element {
-  return <CounterScreen />;
+  return (
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
+  );
 }
 
 export default App;
